@@ -3,7 +3,7 @@ using YaustinMusicShopOnline.Models;
 using System.Diagnostics;
 
 
-namespace MusicShopStore.Controllers
+namespace YaustinMusicShopOnline.Controllers
 {
     public class HomeController : Controller
     {
