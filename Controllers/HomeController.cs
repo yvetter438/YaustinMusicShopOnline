@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using YaustinMusicShopOnline.Models;
+using System.Diagnostics;
 
-namespace YaustinMusicShopOnline.Controllers
+
+namespace MusicShopStore.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,7 +19,7 @@ namespace YaustinMusicShopOnline.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ShoppingCart()
         {
             return View();
         }

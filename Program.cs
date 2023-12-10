@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using YaustinMusicShopOnline.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<YaustinMusicShopOnlineContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("YaustinMusicShopOnlineContext") ?? throw new InvalidOperationException("Connection string 'YaustinMusicShopOnlineContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

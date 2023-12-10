@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Payment</h2>
+
+<form>
+    <label for="Credit Card Number">Credit Card Number</label>
+    <input type="number" id="cc-number" name="creditcardnumber"
+           pattern="[0-9]{16}" title="Credit Card Number" ><br><br>
+    
+
+    <label for="Expiration Date">Expiration Date</label>
+    <input type="number" id="expdate" name="expdate"
+           pattern="[0-9]{4}" title="Exp Date"><br><br>
+    
+
+    <label for="CVV">CVV</label>
+    <input type="number" id="cvv" name="cvv"
+           pattern="[0-9]{3}" title="CVV"><br><br>
+    
+
+</form>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box Example</title>
+    <style>
+        #message-box {
+            display: none;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showSuccessMessage()">Submit</button>
+
+    <div id="message-box">Success! Your payment has been recieved!</div>
+
+    <script>
+        function showSuccessMessage() {
+            var messageBox = document.getElementById("message-box");
+            messageBox.style.display = "block";
+
+            // Optional: You can hide the message box after a certain time
+            setTimeout(function () {
+                messageBox.style.display = "none";
+            }, 2000); // 2000 milliseconds (2 seconds) in this example
+        }
+    </script>
+
+</body>
+</html>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
